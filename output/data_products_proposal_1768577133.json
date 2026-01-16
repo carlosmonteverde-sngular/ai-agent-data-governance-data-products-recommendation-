@@ -1,0 +1,42 @@
+{
+  "data_products": [
+    {
+      "name": "Drug Indications",
+      "description": "Información detallada sobre las indicaciones aprobadas y potenciales para diversos fármacos.",
+      "domain": "Drug Development & Regulatory Affairs",
+      "owner": "Regulatory Affairs Specialist",
+      "tables": [
+        "pharmaceutical_drugs.drug_indication"
+      ]
+    },
+    {
+      "name": "Drug Molecule & Properties",
+      "description": "Detalles moleculares, información de aprobación, advertencias y nombres comerciales de los fármacos.",
+      "domain": "Drug Discovery & Development",
+      "owner": "Cheminformatics Lead",
+      "tables": [
+        "pharmaceutical_drugs.drug_molecule"
+      ]
+    },
+    {
+      "name": "Drug Safety Warnings",
+      "description": "Registro de advertencias de seguridad asociadas a fármacos, incluyendo toxicidad, país y referencias.",
+      "domain": "Pharmacovigilance",
+      "owner": "Pharmacovigilance Manager",
+      "tables": [
+        "pharmaceutical_drugs.drug_warning"
+      ]
+    },
+    {
+      "name": "Drug Master Data",
+      "description": "Conjunto unificado de metadatos de fármacos, combinando información molecular, indicaciones y advertencias para una visión completa.",
+      "domain": "Pharmaceutical Data Governance",
+      "owner": "Data Steward - Pharma",
+      "tables": [
+        "pharmaceutical_drugs.drug_indication",
+        "pharmaceutical_drugs.drug_molecule",
+        "pharmaceutical_drugs.drug_warning"
+      ]
+    }
+  ]
+}
