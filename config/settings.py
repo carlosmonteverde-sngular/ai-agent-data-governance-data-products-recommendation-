@@ -12,7 +12,9 @@ class Config:
     It loads environment variables and sets defaults.
     """
     # Load Global Vars
-    load_dotenv(f"{os.getcwd()}/config/.env")
+    # Use absolute path relative to this file's location
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    load_dotenv(os.path.join(base_dir, "config", ".env"))
 
     # --- GCP Config ---
     PROJECT_ID: str = os.getenv("PROJECT_ID")
@@ -21,6 +23,8 @@ class Config:
     # Dataplex specific for Glossary
     GLOSSARY_ID: str = os.getenv("GLOSSARY_ID", "my-business-glossary")
     GLOSSARY_LOCATION: str = os.getenv("GLOSSARY_LOCATION", os.getenv("LOCATION"))
+    # Dataplex Data Products Location (must match Data Assets location, e.g., 'us' for multi-region)
+    DATAPLEX_LOCATION: str = os.getenv("DATAPLEX_LOCATION", "us")
     
     DATASET_ID: str = os.getenv("DATASET_ID") # Optional, if needed for context
     TABLE_ID: str = os.getenv("TABLE_ID") # Optional, if needed for context

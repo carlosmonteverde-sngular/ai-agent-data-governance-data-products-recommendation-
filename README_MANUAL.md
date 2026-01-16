@@ -69,7 +69,24 @@ Un Data Steward o Arquitecto de Datos recibe la notificación de la PR.
 ### 3. 📂 Consolidación
 Al aprobar (hacer merge) la PR, la definición del Producto de Datos queda versionada y aprobada en el repositorio (`output/data_products_proposal_....json`).
 
-*Nota: Actualmente este agente se centra en la **recomendación y diseño**. La implementación posterior de estos productos en Dataplex u otras herramientas se realiza basándose en estos archivos JSON aprobados.*
+---
+
+### 4. 🚀 Publicación a Dataplex
+Una vez aprobado el JSON, puedes ejecutar el script de publicación para crear los **Entry Groups** correspondientes en Dataplex.
+
+**Comando:**
+```bash
+python scripts/publish_data_products.py --file output/data_products_proposal_<TIMESTAMP>.json
+```
+
+**Opciones:**
+*   `--dry-run`: Muestra qué se crearía sin hacer cambios reales en Google Cloud.
+
+**Resultado:**
+*   Se crearán **Entry Groups** en Dataplex Catalog.
+*   El `display_name` será el nombre del Data Product.
+*   La `description` incluirá el dominio, owner y descripción de negocio.
+*   *Nota: En esta versión, las tablas se listan en la descripción. La asignación formal de "Entries" a estos Grupos es parte de la evolución del roadmap.*
 
 ---
 
