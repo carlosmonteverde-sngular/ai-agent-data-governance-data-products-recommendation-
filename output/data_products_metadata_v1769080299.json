@@ -1,0 +1,31 @@
+{
+  "data_products": [
+    {
+      "name": "Drug Core Information",
+      "description": "Provides core information about drug molecules, including their chemical properties, approval status, and basic identifiers.",
+      "domain": "Pharmaceutical R&D",
+      "owner": "Drug Informatics Lead",
+      "tables": [
+        "pharmaceutical_drugs.drug_molecule"
+      ]
+    },
+    {
+      "name": "Drug Indications & Targets",
+      "description": "Details the indications for which drugs are approved or being investigated, along with linked diseases and molecular targets.",
+      "domain": "Clinical Research",
+      "owner": "Clinical Trials Manager",
+      "tables": [
+        "pharmaceutical_drugs.drug_indication"
+      ]
+    },
+    {
+      "name": "Drug Safety & Warnings",
+      "description": "Aggregates safety information for drugs, including toxicity classifications, country-specific warnings, and years of issuance.",
+      "domain": "Pharmacovigilance",
+      "owner": "Drug Safety Officer",
+      "tables": [
+        "pharmaceutical_drugs.drug_warning"
+      ]
+    }
+  ]
+}
